@@ -15,6 +15,7 @@ import {
 
 import Config from '../config/training.json'
 
+const PickerItem = Picker.Item
 export default class Settings extends Component {
   constructor(props) {
     super(props)
@@ -70,7 +71,7 @@ export default class Settings extends Component {
                 {Config.stages.map((stageArr, index) => {
                   const stageConcat = this.formatStage(stageArr)
                   const niceName = `Level ${index+1} ( ${stageConcat} )`
-                  return <Item key={index} label={niceName} value={stageConcat} />
+                  return <PickerItem key={index} label={niceName} value={stageConcat} />
                 })}
               </Picker> : null}
             </ListItem>
@@ -84,7 +85,7 @@ export default class Settings extends Component {
                 selectedValue={breakSetting.value}
                 onValueChange={val => this.setState({breakSetting: this.mapBreakInterval(val)})}>
                 {Config.breakIntervals.map(({name, value}, index) => {
-                  return <Item key={index} label={name} value={value} />
+                  return <PickerItem key={index} label={name} value={value} />
                 })}
               </Picker> : null}
             </ListItem>
