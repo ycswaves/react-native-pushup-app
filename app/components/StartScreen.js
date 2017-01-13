@@ -11,24 +11,19 @@ export default class StartScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Container style={styles.main}>
-          <Content justifyContent='center'>
-            <Title style={styles.mainTitle}>Ready for training today?</Title>
-          </Content>
-          <Content justifyContent='center' theme={myTheme}>
-            <Button bordered large block rounded onPress={Actions.trainingSession}>
-              Start
-              <Icon style={{fontSize: 30, marginRight: 10}} name="md-stopwatch"/>
-            </Button>
+      <Content style={styles.main} justifyContent='center' theme={myTheme}>
+        <Title style={styles.mainTitle}>Ready for training today?</Title>
 
-            <Button bordered style={{ marginTop: 30}} large block rounded onPress={Actions.settings}>
-              Settings
-              <Icon style={{fontSize: 30, marginRight: 10}} name="ios-settings"/>
-            </Button>
-          </Content>
-        </Container>
-      </View>
+        <Button bordered large block rounded onPress={Actions.trainingSession}>
+          Start
+          <Icon style={{fontSize: 30, marginRight: 10}} name="md-stopwatch"/>
+        </Button>
+
+        <Button bordered style={{ marginTop: 20}} large block rounded onPress={Actions.settings}>
+          Settings
+          <Icon style={{fontSize: 30, marginRight: 10}} name="ios-settings"/>
+        </Button>
+      </Content>
     )
   }
 }
@@ -48,6 +43,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     color: 'white',
     fontWeight: '300',
-    marginBottom: 10
+    marginBottom: 200,
   },
 });

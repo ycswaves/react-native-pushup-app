@@ -19,33 +19,24 @@ export default class EndScreen extends Component {
   render() {
     const cheers = ['Well done', 'Excellent', 'Good job']
     return (
-      <View style={styles.container}>
-        <Container style={styles.main}>
-          <Content justifyContent='center' theme={myTheme}>
-            <Title style={styles.mainTitle}>{cheers[Math.floor(Math.random()*10) % cheers.length]}!</Title>
-            <Text style={styles.subTitle}>You've done with today's training</Text>
-          </Content>
-          <Content justifyContent='center' theme={myTheme}>
-            <Button large block rounded bordered onPress={Actions.startScreen}>
-              Home
-              <Icon style={{fontSize: 30, marginRight: 10}} name="md-home" />
-            </Button>
-            <Button style={{marginTop: 10}} large block rounded bordered onPress={Actions.startScreen}>
-              View Report
-              <Icon style={{fontSize: 30, marginRight: 10}} name="md-stats" />
-            </Button>
-          </Content>
-        </Container>
-      </View>
+      <Content style={styles.main} justifyContent='center' theme={myTheme}>
+        <Title style={styles.mainTitle}>{cheers[Math.floor(Math.random()*10) % cheers.length]}!</Title>
+        <Text style={styles.subTitle}>You've done with today's training</Text>
+
+        <Button large block rounded bordered onPress={Actions.startScreen}>
+          Home
+          <Icon style={{fontSize: 30, marginRight: 10}} name="md-home" />
+        </Button>
+        <Button style={{marginTop: 10}} large block rounded bordered onPress={Actions.startScreen}>
+          View Report
+          <Icon style={{fontSize: 30, marginRight: 10}} name="md-stats" />
+        </Button>
+      </Content>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    flex: 1
-  },
   main: {
     backgroundColor: '#02a8f3',
     padding: 40,
@@ -60,6 +51,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     fontSize: 20,
-    color: 'white'
+    color: 'white',
+    marginBottom: 200,
   }
 })
