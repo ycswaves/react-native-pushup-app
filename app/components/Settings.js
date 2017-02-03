@@ -11,7 +11,7 @@ import {
   Text,
   Picker,
   Button,
-  Item } from 'native-base'
+} from 'native-base'
 
 import Config from '../config/training.json'
 
@@ -64,7 +64,7 @@ export default class Settings extends Component {
               <Text style={{alignSelf: 'center'}}>Stage</Text>
               {Config.stages.length > 0 ?
               <Picker
-                iosHeader="Select one"
+                iosHeader="Stage"
                 mode="dropdown"
                 selectedValue={this.formatStage(stageSetting)}
                 onValueChange={val => this.setState({stageSetting: this.mapStage(val)})}>
@@ -80,7 +80,7 @@ export default class Settings extends Component {
               <Text style={{alignSelf: 'center'}}>Break Interval</Text>
               {Config.stages.length > 0 ?
               <Picker
-                iosHeader="Select one"
+                iosHeader="Break Interval"
                 mode="dropdown"
                 selectedValue={breakSetting.value}
                 onValueChange={val => this.setState({breakSetting: this.mapBreakInterval(val)})}>
