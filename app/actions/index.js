@@ -25,4 +25,4 @@ const rootReducer = combineReducers({
   userSettings,
 })
 
-export { rootReducer, actions }
+export { rootReducer, actions, userSettings, SAVE_SETTINGS }

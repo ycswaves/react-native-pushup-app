@@ -20,7 +20,7 @@ import {
 } from 'native-base'
 
 import { Actions } from 'react-native-router-flux'
-import Timer from '../lib/Timer'
+import Timer, { CountDownTimer } from '../lib/Timer'
 
 import Sound from 'react-native-sound'
 const TOUCH_SOUND = new Sound('music_marimba_chord.wav', Sound.MAIN_BUNDLE)
@@ -57,7 +57,7 @@ export default class TrainingSession extends Component {
   componentDidMount() {
     this.trainingTimer = new Timer()
     const breakInterval = 1000 * this.props.breakInterval
-    this.breakTimer = new Timer(
+    this.breakTimer = new CountDownTimer(
       {
         countDownDuration: breakInterval,
         timeoutCallback: () => {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import {persistStore, autoRehydrate} from 'redux-persist'
-import {AsyncStorage} from 'react-native'
+import { persistStore, autoRehydrate } from 'redux-persist'
+import { AsyncStorage } from 'react-native'
 
 import Router from './containers/Router'
 import { rootReducer } from './actions'
